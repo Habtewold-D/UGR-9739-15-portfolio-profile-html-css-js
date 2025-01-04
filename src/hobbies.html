@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/hobbies.css">
 </head>
 <body>
     <header class="header">
         <a href="#" class="logo"><span>H</span>ab</a>
+        <div class="menu-icon">
+            <img src="images/menu.png" alt="menu icon">
+        </div>
         <nav class="navbar">
             <a href="home.html">Home</a>
             <a href="about-me.html">About</a>
@@ -15,10 +19,6 @@
             <a href="hobbies.html">Hobbies</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <div class="menu-icon">
-            <img src="images/menu.png" alt="menu icon">
-        </div>
-        
     </header>
     <a href="#" class="hobby">Hobbies</a>
     <div class="hobby_container">
@@ -36,9 +36,9 @@
                 <h4>Travel</h4>
             </div>
         </figure>
-        <div class="portfolio_box">
+        <div class="hobby_box">
             <img src="images/game.jpg" alt="game image">
-            <div class="portfolio_layer">
+            <div class="hobby_layer">
                 <h4>playing Game</h4>
             </div>
         </div>
@@ -54,7 +54,7 @@
                 <h4>Exercise Taekwondo</h4>
             </div>
         </div>
-        <div class="hobby_box">
+        <div id="hobby_box" class="hobby_box">
             <img src="images/music2.png" alt="Music Image">
             <div class="hobby_layer">
                 <h4>Listening to Music</h4>
@@ -64,10 +64,13 @@
                 <source src="audios/music.mp3" type="audio/mp3">
                  </audio>
         </div>
-        <footer>
-            <p>Copyright &copy; 2024 Habtewold | All right reserved</p>
-        </footer>
+        
     </div>
+    <footer>
+        <p>Copyright &copy; 2024 Habtewold | All right reserved</p>
+    </footer>
+    <script src="js/menu.js"></script>
+    <script src="js/musicPlayPause.js"></script>
 </body>
 
 </html>

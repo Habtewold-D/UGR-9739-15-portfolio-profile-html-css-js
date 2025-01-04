@@ -1,0 +1,231 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(37, 35, 31);
+    max-width: 100%; 
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(37, 35, 31);
+    z-index: 100;
+}
+.navbar :nth-child(4) {
+    color: rgb(239, 168, 54);
+  }
+
+.logo {
+    font-size: 2.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.header span {
+    color: rgb(239, 168, 54);
+    font-size: 4rem;
+}
+
+
+.navbar a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.navbar a:hover {
+    color: rgb(239, 168, 54);
+}
+
+
+.menu-icon {
+    display: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    margin-top: 1rem;
+    height: 50px;
+    width: 70px;
+}
+
+.navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 6rem;
+        right: 1rem;
+        background-color: rgb(37, 35, 31);
+        width: 80%;
+        text-align: center;
+}
+
+.navbar a {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid white;
+}
+
+.menu-icon {
+    display: block;
+}
+
+
+.navbar.show {
+    display: flex;
+}
+
+.navbar a:hover {
+    color: rgb(239, 168, 54);
+}
+.hobby_container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); 
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Container for the hobby box */
+.hobby_box {
+    border-radius: 2rem;
+    overflow: hidden;
+    display: flex;
+    margin: 1rem;
+    position: relative; /* Ensures .hobby_layer is positioned relative to .hobby_box */
+    width: 100%; /* Ensures the box takes up full width */
+    height: auto; /* Allows height to adjust based on content */
+}
+
+/* Image inside the hobby box */
+.hobby_box img {
+    width: 100%;
+}
+
+/* Styling for the hobby title */
+.hobby {
+    font-size: 3rem; /* Adjust font size for the hobby title */
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding-top: 6rem; /* Position the title a bit lower */
+}
+
+/* The layer inside the hobby box (visible on hover) */
+.hobby_box .hobby_layer {
+    position: absolute; /* Position it inside the hobby box */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ensures the layer covers the full width of .hobby_box */
+    height: 100%; /* Ensures the layer covers the full height of .hobby_box */
+    background: linear-gradient(rgba(45, 44, 44, .6), rgba(31, 18, 18, 0.973));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 3rem;
+    color: rgb(248,209,150);
+    font-size: 2rem;
+    transform: translateY(100%); /* Initially, the layer is hidden below */
+    transition: .5s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect to reveal the layer */
+.hobby_box:hover .hobby_layer {
+    transform: translateY(0); /* Move the layer up when hovering */
+}
+
+
+/* Hover effect for image (slightly scales up the image) */
+.hobby_box:hover img {
+    transform: scale(1.1);
+    transition: .5s ease; /* Smooth transition */
+}
+footer{
+    color: white;
+    background-color: rgb(37, 35, 31);
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid rgb(248,209,150);
+}
+
+
+/* Medium Screens (Mobile Landscape) */
+@media (min-width: 30.07rem) and (max-width: 47.94rem) {
+    .hobby_container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+/* Medium Screens (Tablet Portrait) */
+@media (min-width: 30.07rem) and (max-width: 47.94rem) {
+    .hobby_container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* Larger Screens (Tablet Landscape) */
+@media (min-width: 48rem) and (max-width: 64rem) {
+    .hobby_container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .menu-icon{
+        display: none;
+    }
+    .navbar{
+        display: block;
+        top: 3rem;
+        padding-left: 8rem;
+        
+    }
+    .navbar.show{
+        flex-direction: row;
+        top: 2rem;
+        padding-left: 20%;
+    }
+    .navbar a {
+        border-bottom: none;
+    }
+}
+
+/* Large Screens (Desktop) */
+@media (min-width: 64.06rem) {
+    .hobby_container {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    .menu-icon{
+        display: none;
+    }
+    .navbar{
+        display: block;
+        top: 3rem;
+        padding-left: 20rem;
+    }
+    .navbar a {
+        border-bottom: none;
+    }
+    .navbar.show{
+        flex-direction: row;
+        top: 2rem;
+        padding-left: 35%;
+    }
+}
